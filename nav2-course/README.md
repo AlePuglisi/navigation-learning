@@ -23,9 +23,30 @@ Anyway, it is easy to extend the knowledge to a real robot if available.<br/>
 - How to create custom simulated world in Gazebo
 - How to make your robot usable with Nav2
 - Write code to interact with Nav2
-  
-### What is Nav2 stack, Why do we need it? 
 
+### Benefits of using ROS 2 
+- Provide the base layer for any robotics application
+- "Avoid reinventing the wheel", work at a high level, without reimplementing stuff
+- Amazing open-source community
+- Plug and Play packages easy to use<br/>
+
+In summary, ROS speeds up development time!<br/>
+In particular, implementing a Navigation framework from scratch would be complex and time-consuming, but the Nav2 stack is here to help! 
+
+### What is Nav2 stack, Why do we need it? 
+<image width=400 height=200 src=https://github.com/user-attachments/assets/3bab31d7-9662-4fd3-946d-6637863986bd>
+  
+A Stack is a collection of ROS packages (a framework) to achieve a specific goal, in our case, Navigation: <br/>
+Make the robot move from point A to point B (with a desired pose = position + orientation),<br/> 
+in a safe way (avoiding static and dynamic obstacles).
+<br/>
+
+The navigation objective is achieved in 2 steps: 
+  1) Create a representation of the environment map (SLAM)
+  2) Make the robot navigate from A to B on that map
+
+Both tasks are achieved with Nav2 functionalities and tools. <br/>
+Also, Nav2 stacks expose many ways to interact with it from custom ROS 2 applications.
 
 ## 2) Setup and Installation 
 
