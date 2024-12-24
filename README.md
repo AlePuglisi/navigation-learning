@@ -1,8 +1,8 @@
 # navigation-learning
 Mapping and Navigation | ROS | Nav2 | SLAM | Learning tutorials
 
-This Repository is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. 
-Plus other tutorials and learning content on navigation Theory and implementation with ROS.
+This repository gathers tutorials and learning content on navigation theory and implementation with ROS, based on my understanding and notes.<br/>
+Also, interesting papers and books on this topic will be collected here. 
 
 ## Learning course, Projects, and Notes: 
 - Perception Localization and Mapping for Mobile Robot (university course): [Projects](https://github.com/AlePuglisi/perception-localization-mapping-projects), Notes
