@@ -5,7 +5,7 @@ This Repository is based on the course on Nav2 on [Udemy](https://www.udemy.com/
 Plus other tutorials and learning content on navigation Theory and implementation with ROS.
 
 ## My learning course, projects, and Notes: 
-- [Perception Localization and Mapping for Mobile Robot](https://github.com/AlePuglisi/perception-localization-mapping-projects) (university course) 
-- [Nav2 basics course by Edouard Renard]()
+- Perception Localization and Mapping for Mobile Robot (university course): [Projects](https://github.com/AlePuglisi/perception-localization-mapping-projects), Notes
+- [Nav2 basics course by Edouard Renard](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course)
 - ...others...
 
