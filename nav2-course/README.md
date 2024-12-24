@@ -49,6 +49,16 @@ Both tasks are achieved with Nav2 functionalities and tools. <br/>
 Also, Nav2 stacks expose many ways to interact with it from custom ROS 2 applications.
 
 ## 2) Setup and Installation 
+To run the code of those lectures you need: 
+- Ubuntu 22.04
+- ROS 2 [Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) 
+( Nav2 is implemented for previous ROS 2 distributions, but different bugs were present for Foxy)
+
+Once ROS 2 and colcon is properly installed and the environment sourced, follow this steps to install the required packages to follow along: 
+
+```bash
+sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-turtlebot3* 
+```
 
 ## 3) [Mapping](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/3-mapping) with SLAM 
 
