@@ -1,14 +1,16 @@
 # ROS2 Nav2 - with SLAM and Navigation
-ROS2 Humble | Nav2 | SLAM | Gazebo 
+Ubuntu 22.04 | ROS2 Humble | Nav2 | SLAM | Gazebo 
 
 This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. <br/>
 
-(..I'm currently taking this course..) 
+(..I'm currently taking this course..) <br/>
 Notice that, this is not to advertise his course.<br>
 Instead, I want to provide a tutorial for anyone approaching ROS2 Navigation with Nav2 for the first time, or for those that want to recap it.<br/>
-This resource is also for the future me, as a simplified "documentation" to Nav2 usage.
+This resource is also for the future me, as a simplified "documentation" to Nav2 usage, this is based on my understanding and what I think is most useful.<br/>
+
 
 ## 1) Introduction 
+
 
 ## 2) Setup and Installation 
 
