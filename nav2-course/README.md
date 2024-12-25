@@ -4,9 +4,11 @@ Ubuntu 22.04 | ROS 2 Humble | Nav2 | SLAM | Gazebo
 This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. <br/>
 
 (..I'm currently taking this course..) <br/>
-Notice that, this is not to advertise his course.<br>
-Instead, I want to provide a tutorial for anyone approaching ROS2 Navigation with Nav2 for the first time, or for those that want to recap it.<br/>
-This resource is also for the future me, as a simplified "documentation" to Nav2 usage, this is based on my understanding and what I think is most useful.<br/>
+
+>[!NOTE]
+> This is not to advertise his course.<br/>
+> Instead, I want to provide a tutorial for those approaching ROS2 Navigation with Nav2 for the first time or those wanting to recap it.<br/>
+> This resource is also for the future me, as a simplified "documentation" to Nav2 usage, this is based on my understanding and what I think is most useful.<br/>
 
 ## Prerequisite knowledge (Advised):
 - ROS 2 basics (Nodes, topics, etc)
@@ -14,13 +16,13 @@ This resource is also for the future me, as a simplified "documentation" to Nav2
 - Linux CLI basics
 
 ## 1) Introduction 
-This course has a learn-by-doing approach, and it is possible to follow it without a real robot, all is done with Gazebo simulation.<br/>
-Anyway, it is easy to extend the knowledge to a real robot if available.<br/>
+This course has a learn-by-doing approach, and it is possible to follow it without a real robot, Everything here is done in Gazebo simulation.<br/>
+It is easy to extend this tutorial to a real mobile robot.<br/>
 
 ### Learning steps: 
 - Discover Nav2 stack with [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
 - Understand how the Nav2 stack works
-- How to create custom simulated world in Gazebo
+- How to create a custom navigation world in Gazebo
 - How to make your robot usable with Nav2
 - Write code to interact with Nav2
 
@@ -55,7 +57,7 @@ To run the code of those lectures you need:
 - ROS 2 [Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) 
 ( Nav2 is implemented for previous ROS 2 distributions, but different bugs were present for Foxy)
 
-Once ROS 2 and colcon is properly installed and the environment sourced, follow this steps to install the required packages to follow along: 
+Once ROS 2 and ``colcon`` are properly installed and the environment sourced, follow these steps to install the required packages to follow along: 
 
 ```bash
 # Terminal 
@@ -65,7 +67,7 @@ sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-turtl
 <image align=left width=200 height=200 src=https://github.com/user-attachments/assets/e8e6362a-e393-4e91-b955-14b4daeaf50d>
 
 The [turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) robotic platform, comes in different models.<br/>
-During this course, we are going to use the **Waffle** model in Gazebo Simulation. <br/>
+In this course, we use the **Waffle** model in Gazebo Simulation. <br/>
 To communicate to the environment the model in use, let's export a variable.<br/>
 As usual, to avoid doing it anytime you open a new terminal, add this export to your bashrc: 
 ```bash
@@ -82,14 +84,15 @@ Add the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save, an
     # Terminal 
     . /usr/share/gazebo/setup.sh
     ```
-    and then, launch again gazebo, if now the problem is fixed, add that line to your bashrc.<br/>
+    Launch Gazebo again, if now the problem is fixed, add that line to your bashrc. <br/>
     
-    Another possible solution is to source Gazebo setup.bash:
+    Another possible solution is to source the Gazebo setup.bash:
      ```bash
      # Terminal 
      source /usr/share/gazebo/setup.bash
      ```
-     Again, if this solve the issue, add that line to your bashrc.<br/>
+     Again, if this solves the issue, add that line to your bashrc.<br/>
+     
 2) **Navigation**:<br/>
    This fix is needed for [Section 4](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate) on Navigation with Nav2.<br/>
    If launching ``turtlebot3_navigation2 navigation2.launch.py <args>``, the map is not uploaded in Rviz2, follow this 2 steps:<br/>
@@ -107,7 +110,7 @@ Add the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save, an
    - **Modify Nav2 Parameter file**:<br/>
      To use turtlebot3 for Navigation, we need to make a quick fix on the parameter file related to the robot model we are going to use.<br/>
      During this course, we are going to use the **Waffle** model, so we are going to modify ``waffle.yaml``.<br/>
-     First, we move to the proper location, then we modify with super user rights the parameter file: 
+     First, we move to the proper location, and then we modify with superuser rights the parameter file: 
      ```bash
      # Terminal 
      cd /opt/ros/humble/share/turtlebot3_navigation2/param
@@ -133,7 +136,7 @@ Give Nav2 Goal as an objective pose or multiple goals as waypoints.
 What are the main components of Nav2 Stack? <br/>
 Up to this lesson, we learn the stack with [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3).<br/>
 Understanding the global architecture and each component (global and local planner, etc..) is fundamental to set up a custom robot navigating in a custom environment.<br/>
-Also, interacting with the Nav2 stack from external custom nodes require a better understanding of it!
+Interacting with the Nav2 stack from external custom nodes also requires a better understanding of the architecture behind it!
 
 ## 6) ... WIP ...
 
