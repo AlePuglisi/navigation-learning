@@ -72,7 +72,7 @@ As usual, to avoid doing it anytime you open a new terminal, add this export to 
 # Terminal 
 gedit ~/.bashrc
 ```
-And add at the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save and close. 
+Add the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save, and close. 
 
 
 ### SOLVING ISSUES: 
@@ -92,21 +92,28 @@ And add at the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, s
      Again, if this solve the issue, add that line to your bashrc.<br/>
 2) **Navigation**:<br/>
    This fix is needed for [Section 4](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate) on Navigation with Nav2.<br/>
-   If when you launch ``turtlebot3_navigation2 navigation2.launch.py <args>``, the map is not uploaded in Rviz2, follow this 2 steps:<br/>
+   If launching ``turtlebot3_navigation2 navigation2.launch.py <args>``, the map is not uploaded in Rviz2, follow this 2 steps:<br/>
 
-   2.1) **Change DDS** used for ROS 2 communication:<br/>
-   By changing the DDS from Fast to Cyclone, synchronization issues will be fixed.<br/>
-   First, install the new DDS: 
-   ```bash
-   # Terminal 
-   sudo apt install ros-humble-rmw-cyclonedds-cpp
-   ```
-   Then, communicate to your system that you want to use this DDS by adding this line to your bashrc: <br/>
-   `` export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ``<br/>
+   - **Change DDS** used for ROS 2 communication:<br/>
+     By changing the DDS from Fast to Cyclone, synchronization issues will be fixed.<br/>
+     First, install the new DDS: 
+     ```bash
+     # Terminal 
+     sudo apt install ros-humble-rmw-cyclonedds-cpp
+     ```
+     Then, communicate to your system that you want to use this DDS by adding this line to your bashrc: <br/>
+     `` export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ``<br/>
    
-   2.2) **Modify Nav2 Parameter file**:<br/>
-   To use turtlebot3 for Navigation, we need to make a quick fix on the parameter file related to the robot model we are going to use.<br/>
-   During this course, we are going to use the **Waffle** model.<br/>
+   - **Modify Nav2 Parameter file**:<br/>
+     To use turtlebot3 for Navigation, we need to make a quick fix on the parameter file related to the robot model we are going to use.<br/>
+     During this course, we are going to use the **Waffle** model, so we are going to modify ``waffle.yaml``.<br/>
+     First, we move to the proper location, then we modify with super user rights the parameter file: 
+     ```bash
+     # Terminal 
+     cd /opt/ros/humble/share/turtlebot3_navigation2/param
+     sudo gedit waffle.yaml
+     ```
+     Go to ``robot_model_type: "differential"`` and change it into ``robot_model_type: "nav2_amcl::DifferentialMotionModel"``
     
    
 
