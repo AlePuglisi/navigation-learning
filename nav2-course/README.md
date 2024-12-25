@@ -15,7 +15,7 @@ This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/co
 - Python Programming 
 - Linux CLI basics
 
-## 1) Introduction 
+## 1. Introduction 
 This course has a learn-by-doing approach, and it is possible to follow it without a real robot, Everything here is done in Gazebo simulation.<br/>
 It is easy to extend this tutorial to a real mobile robot.<br/>
 
@@ -51,7 +51,7 @@ The navigation objective is achieved in 2 steps:
 Both tasks are achieved with Nav2 functionalities and tools. <br/>
 Also, Nav2 stacks expose many ways to interact with it from custom ROS 2 applications.
 
-## 2) Setup and Installation 
+## 2. Setup and Installation 
 To run the code of those lectures you need: 
 - Ubuntu 22.04
 - ROS 2 [Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) 
@@ -121,23 +121,27 @@ Add the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save, an
    
 
 
-## 3) [Mapping](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/3-mapping) with SLAM 
+## 3. [Mapping](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/3-mapping) with SLAM 
 
 How do you generate the world map using SLAM? <br/>
 This is the first step required to achieve autonomous navigation. The generated map will be fundamental to Navigating the environment. 
 
-## 4) [Navigate](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate) with Nav2
+## 4. [Navigate](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate) with Nav2
 
 Once a map has been generated, how do you navigate autonomously on it with Nav2? <br/>
 Give Nav2 Goal as an objective pose or multiple goals as waypoints. 
 
-## 5) [Architecture](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/5-architecture), understand Nav2 Stack
+## 5. [Architecture](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/5-architecture), understand Nav2 Stack
 
 What are the main components of Nav2 Stack? <br/>
 Up to this lesson, we learn the stack with [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3).<br/>
 Understanding the global architecture and each component (global and local planner, etc..) is fundamental to set up a custom robot navigating in a custom environment.<br/>
 Interacting with the Nav2 stack from external custom nodes also requires a better understanding of the architecture behind it!
 
-## 6) ... WIP ...
+## 6. ... WIP ...
 
+## 7.
 
+## 8.
+
+## 9.
