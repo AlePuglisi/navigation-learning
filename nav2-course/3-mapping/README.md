@@ -86,5 +86,3 @@ This command will create two files in ``<relative_path/>`` (with respect to the 
   - **occupied_tresh**: when the probability of a pixel being occupied is above this threshold, it will             be considered occupied <br/>
   - **free_tresh**: when the probability of a pixel being occupied is below this threshold, it will                 be considered free <br/> 
 
-
-## Generated Map
