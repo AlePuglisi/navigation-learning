@@ -34,8 +34,9 @@ In summary, ROS speeds up development time!<br/>
 In particular, implementing a Navigation framework from scratch would be complex and time-consuming, but the Nav2 stack is here to help! 
 
 ### What is Nav2 stack, Why do we need it? 
-<image width=400 height=200 src=https://github.com/user-attachments/assets/3bab31d7-9662-4fd3-946d-6637863986bd>
-  
+<image width=400 height=200 src=https://github.com/user-attachments/assets/e038bcea-5b1e-4881-8704-82df6e5dcea1>
+<image width=200 height=200 src=https://github.com/user-attachments/assets/6a1eb788-1991-400f-916f-83b0c2b1510b>
+
 A Stack is a collection of ROS packages (a framework) to achieve a specific goal, in our case, Navigation: <br/>
 Make the robot move from point A to point B (with a desired pose = position + orientation),<br/> 
 in a safe way (avoiding static and dynamic obstacles).
@@ -57,8 +58,58 @@ To run the code of those lectures you need:
 Once ROS 2 and colcon is properly installed and the environment sourced, follow this steps to install the required packages to follow along: 
 
 ```bash
+# Terminal 
 sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-turtlebot3* 
 ```
+### Quick export before turtlebot3 tutorials: 
+<image align=left width=200 height=200 src=https://github.com/user-attachments/assets/e8e6362a-e393-4e91-b955-14b4daeaf50d>
+
+The [turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) robotic platform, comes in different models.<br/>
+During this course, we are going to use the **Waffle** model in Gazebo Simulation. <br/>
+To communicate to the environment the model in use, let's export a variable.<br/>
+As usual, to avoid doing it anytime you open a new terminal, add this export to your bashrc: 
+```bash
+# Terminal 
+gedit ~/.bashrc
+```
+And add at the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save and close. 
+
+
+### SOLVING ISSUES: 
+1) **GAZEBO Simulation**:<br/>
+    If you encounter problems when running Gazebo for simulation, try the following command in the terminal:
+    ```bash
+    # Terminal 
+    . /usr/share/gazebo/setup.sh
+    ```
+    and then, launch again gazebo, if now the problem is fixed, add that line to your bashrc.<br/>
+    
+    Another possible solution is to source Gazebo setup.bash:
+     ```bash
+     # Terminal 
+     source /usr/share/gazebo/setup.bash
+     ```
+     Again, if this solve the issue, add that line to your bashrc.<br/>
+2) **Navigation**:<br/>
+   This fix is needed for [Section 4](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate) on Navigation with Nav2.<br/>
+   If when you launch ``turtlebot3_navigation2 navigation2.launch.py <args>``, the map is not uploaded in Rviz2, follow this 2 steps:<br/>
+
+   2.1) **Change DDS** used for ROS 2 communication:<br/>
+   By changing the DDS from Fast to Cyclone, synchronization issues will be fixed.<br/>
+   First, install the new DDS: 
+   ```bash
+   # Terminal 
+   sudo apt install ros-humble-rmw-cyclonedds-cpp
+   ```
+   Then, communicate to your system that you want to use this DDS by adding this line to your bashrc: <br/>
+   `` export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ``<br/>
+   
+   2.2) **Modify Nav2 Parameter file**:<br/>
+   To use turtlebot3 for Navigation, we need to make a quick fix on the parameter file related to the robot model we are going to use.<br/>
+   During this course, we are going to use the **Waffle** model.<br/>
+    
+   
+
 
 ## 3) [Mapping](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/3-mapping) with SLAM 
 
