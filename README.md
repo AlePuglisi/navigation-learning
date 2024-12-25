@@ -6,6 +6,6 @@ Also, interesting papers and books on this topic will be collected here.
 
 ## Learning course, Projects, and Notes: 
 - Perception Localization and Mapping for Mobile Robot (university course): [Projects](https://github.com/AlePuglisi/perception-localization-mapping-projects), Notes
-- [Nav2 basics course by Edouard Renard](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course)
+- [Nav2 basics course](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course)
 - ...others...
 
