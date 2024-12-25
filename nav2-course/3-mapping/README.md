@@ -14,6 +14,6 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 ## Tutorial 
 
 > [!IMPORTANT]
-> If not already done, remember to specify TURTLEBOT3_MODEL environment variable, as explained [here](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course#quick-export-before-turtlebot3-tutorials)
+> If Not done already, remember to specify TURTLEBOT3_MODEL environment variable, as explained [here](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course#quick-export-before-turtlebot3-tutorials)
 
 ## Generated Map
