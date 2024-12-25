@@ -32,19 +32,59 @@ This will launch a Gazebo world with the turtlebot3 robot in it (including senso
 # Terminal 2
 ros2 run turtlebot3_teleop teleop_keyboard 
 ```
+
+When this terminal is your selected window, you can move the robot around using your keyboard.<br/>
+This is very important for mapping, you have to move around and gather information to reconstruct the map.<br/>
+As can be seen in the figure above, the nodes involved during teleoperation are:
+- ``teleop_keyboard``: convert keyboard command into velocity commands, published to ``/cmd_vel`` topic
+- ``turtlebot3_diff_drive``: controller node, implementing differential drive controller that converts chassis command into wheel command, based on differential drive kinematic.
+
 ### 3. Launch Mapping feature
 ```bash
 # Terminal 3
 ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 ```
 
+> [!NOTE]
+> ``use_sim_time:=True`` argument is needed only when working in Gazebo simulation.
+
+This launcher is used to process map creation, and opens Rviz2, providing a real-time visualization of how mapping is going. <br/> 
+
+Now, use the teleoperation terminal to move the robot around and reconstruct the map, discovering all free (white) and occupied (black) space from sensor data. <br/>
+You don't need to discover 100% of the reachable map, but obtain a meaningful representation, avoiding false wall openings or non-existent obstacles.  
+
+> [!CAUTION]
+> During robot motion around, avoid:
+> - Turning too fast  (may cumulate noise)
+> - Hitting obstacles (may create oscillations, that move the plane of 2D Laser scan)
+> Those behaviors affect the quality of the generated map.<br/>
+> If map data are too noisy due to these factors, restart everything.
+
+Keep all terminals open all the time, or your mapping process will be lost!
+
 ### 4. Save the Map
+
+Once you finish exploring the whole environment, and you are satisfied with the reconstructed map:
 
 ```bash
 # Terminal 4
-ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+ros2 run nav2_map_server map_saver_cli -f <relative_path/map_name> 
 ```
 
+This command will create two files in ``<relative_path/>`` (with respect to the terminal path where you run ``map_saver_cli`` node):
+- ``<map_name>.pgm``: map image that will be loaded for navigation. This is characterized by: <br/>
+  - **White pixels** for free space <br/>
+  - **Black pixels** for occupied space (obstacles, walls) <br/>
+  - **Grey pixels for** unknown space (for example outside of boundary or inside big obstacles) <br/>
+    
+- ``<map_name>.yaml``: it contains meta-information about the map: <br/>
+  - **image**: relative path to pgm file <br/>
+  - **resolution**: meter/pixel map resolution <br/>
+  - **origin**: coordinates of the bottom-left point in the map, depending on the location where we start 
+      mapping <br/>
+  - **negate**: 0 by default, 1 if occupied/free are inverted <br/>
+  - **occupied_tresh**: when the probability of a pixel being occupied is above this threshold, it will             be considered occupied <br/>
+  - **free_tresh**: when the probability of a pixel being occupied is below this threshold, it will                 be considered free <br/> 
 
 
 ## Generated Map
