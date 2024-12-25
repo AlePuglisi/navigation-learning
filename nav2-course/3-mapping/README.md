@@ -16,4 +16,20 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 > [!IMPORTANT]
 > If Not done already, remember to specify TURTLEBOT3_MODEL environment variable, as explained [here](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course#quick-export-before-turtlebot3-tutorials)
 
+### 1. Launch simulation environment
+<image width=300 height=250 src=https://github.com/user-attachments/assets/5721b386-5d3f-4796-8e00-e7a3e1720bf2>
+
+```bash
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+This will launch a Gazebo world with the turtlebot3 robot in it (including sensors such as 2D Lidar)  
+
+### 2. Run teleoperation node
+
+```bash
+ros2 run turtlebot3_teleop teleop_keyboard 
+```
+
+
+
 ## Generated Map
