@@ -74,7 +74,7 @@ As usual, to avoid doing it anytime you open a new terminal, add this export to 
 # Terminal 
 gedit ~/.bashrc
 ```
-Add the line ``export TURTLEBOT3_MODEL=Waffle`` at the end of the file, save, and close. 
+Add the line ``export TURTLEBOT3_MODEL=waffle`` at the end of the file, save, and close. 
 
 
 ### SOLVING ISSUES: 
