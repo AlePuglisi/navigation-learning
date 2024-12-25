@@ -20,14 +20,29 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 <image width=300 height=250 src=https://github.com/user-attachments/assets/5721b386-5d3f-4796-8e00-e7a3e1720bf2>
 
 ```bash
+# Terminal 1
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 This will launch a Gazebo world with the turtlebot3 robot in it (including sensors such as 2D Lidar)  
 
 ### 2. Run teleoperation node
+<image src=https://github.com/user-attachments/assets/ed9ef382-46cb-44e9-91ce-53e12f4e5953>
 
 ```bash
+# Terminal 2
 ros2 run turtlebot3_teleop teleop_keyboard 
+```
+### 3. Launch Mapping feature
+```bash
+# Terminal 3
+ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+```
+
+### 4. Save the Map
+
+```bash
+# Terminal 4
+ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 ```
 
 
