@@ -93,7 +93,7 @@ Add the line ``export TURTLEBOT3_MODEL=waffle`` at the end of the file, save, an
      ```
      Again, if this solves the issue, add that line to your bashrc.<br/>
      
-2) **Navigation**:<br/>
+2) **NAVIGATION**:<br/>
    This fix is needed for [Section 4](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate) on Navigation with Nav2.<br/>
    If launching ``turtlebot3_navigation2 navigation2.launch.py <args>``, the map is not uploaded in Rviz2, follow this 2 steps:<br/>
 
