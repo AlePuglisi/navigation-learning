@@ -5,7 +5,7 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 
 ### Packages used:
 - [``turtlebot3_cartographer``](https://github.com/ROBOTIS-GIT/turtlebot3/tree/main/turtlebot3_cartographer): for mapping
-- ``turtlebot3_gazebo``: for Gazebo simulation
+- [``turtlebot3_gazebo``](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/main/turtlebot3_gazebo): for Gazebo simulation
 - [``turtlebot3_teleop``](https://github.com/ROBOTIS-GIT/turtlebot3/tree/main/turtlebot3_teleop): for robot teleoperation
 - [``nav2_map_server``](https://github.com/ros-navigation/navigation2/tree/main/nav2_map_server): to save the map
 
