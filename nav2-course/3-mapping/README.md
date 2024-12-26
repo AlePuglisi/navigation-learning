@@ -10,6 +10,11 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 - [``nav2_map_server``](https://github.com/ros-navigation/navigation2/tree/main/nav2_map_server): to save the map
 
 ## Description 
+To achieve the goal of autonomous navigation, our first step is map reconstruction.<br/>
+Without a map, navigation in principle is possible but it may take a long time to navigate in an unknown environment to reach the goal pose.<br/>
+The mapping procedure relies on SLAM algorithms, in which the robot simultaneously localizes itself in the environment (relative to obstacles and walls), and generates the best map estimation based on the sensor information.<br/>
+
+What we need to experiment with mapping is a reliable simulation environment (or a real robot), and a way to move the robot around. 
 
 ## Tutorial 
 
@@ -86,3 +91,11 @@ This command will create two files in ``<relative_path/>`` (with respect to the 
   - **occupied_tresh**: when the probability of a pixel being occupied is above this threshold, it will             be considered occupied <br/>
   - **free_tresh**: when the probability of a pixel being occupied is below this threshold, it will                 be considered free <br/> 
 
+## Conclusion
+Following this step, it is possible to reconstruct a 2D map of any environment.<br/>
+As a practice, you can try to map another turtlebot3 environment, by launching 
+```bash
+# Terminal 4
+ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
+```
+This will take a while to load, but then you can perform mapping in a more realistic environment. 
