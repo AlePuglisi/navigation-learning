@@ -1,4 +1,5 @@
 # 3. Generate a Map with SLAM <br/> (Simultaneous Localization and Mapping) 
+<image src=https://github.com/user-attachments/assets/60b38f00-f019-4de0-88de-52f9b30b3a17>
 
 This lesson does not include written code, but gaining confidence with robot teleoperation and Mapping using turtlebot3.<br/>
 Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/3-mapping/Lesson3_Mapping.pdf) for a detailed explanation of the lesson!
