@@ -1,7 +1,7 @@
-# 6. Build Your own World for Navigation in Gazebo
+# 6. Build Your Own World for Navigation in Gazebo
 
-This lesson include modifying some ROS 2 package.<br/>
-To simulate the turtlebot3 in a custom world, you will create an overlay package of turtlebot3_gazebo, adding new world file for simulation, and custom launch file. <br/>
+This lesson involves modifying a ROS 2 package.<br/>
+To simulate the turtlebot3 in a custom world, you will create an overlay package of turtlebot3_gazebo, adding a new world file for simulation, and a custom launch file. <br/>
 Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/6-custom-world/Lesson6_CustomWorld.pdf) for a detailed explanation of the lesson!
 
 ### Packages used: 
