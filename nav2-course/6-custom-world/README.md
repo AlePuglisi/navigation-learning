@@ -10,7 +10,6 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 - [``turtlebot3_cartographer``](https://github.com/ROBOTIS-GIT/turtlebot3/tree/main/turtlebot3_cartographer): for mapping
 - [``nav2_map_server``](https://github.com/ros-navigation/navigation2/tree/main/nav2_map_server): to save the map
 - [``turtlebot3_navigation2``](https://github.com/ROBOTIS-GIT/turtlebot3/tree/main/turtlebot3_navigation2) for Robot Navigation
-- 
 ### Additional Software (optional): 
 - [``GIMP``](https://www.gimp.org/): for map post-processing, to make it more reliable for Navigation
 
