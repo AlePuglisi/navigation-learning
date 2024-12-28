@@ -64,7 +64,8 @@ Once ROS 2 and ``colcon`` are properly installed and the environment sourced, fo
 sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-turtlebot3* 
 ```
 ### Quick export before turtlebot3 tutorials: 
-<image align=left width=200 height=200 src=https://github.com/user-attachments/assets/e8e6362a-e393-4e91-b955-14b4daeaf50d>
+
+<image align=left width=200 height=200 src=https://github.com/user-attachments/assets/24e0ac93-3c15-4f65-a3f6-4a826db6ba41>
 
 The [turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) robotic platform, comes in different models.<br/>
 In this course, we use the **Waffle** model in Gazebo Simulation. <br/>
