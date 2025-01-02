@@ -166,3 +166,19 @@ So, it is possible to interact with it from external code, and there is no need 
 Using [nav2_simple_commander](https://docs.nav2.org/commander_api/index.html) API, you will programmatically interact with Nav2 from a python script. 
 
 ## 9. Conclusion
+
+In these lectures, you explore the basics of Nav2 stack, first with turtlebot3, then with some hints on how to extend for any other mobile robot. <br/>
+An intuitive explanation of the Stack architecture has been given, and you see an API to establish a programmatic interaction with it. <br/>
+
+> [!IMPORTANT]
+> The course is based on ROS2 Humble with Gazebo Classic, unfortunately in January 2025, Gazebo Classic reaches end-of-life.<br/>
+> This doesn't mean that it will not work anymore, but it will no longer be supported. <br/>
+> So, consider using this tutorial to understand the basics of Nav2, which remain the same, <br/>
+> but explore what are the differences when you work with Nav2 in the new Ignition Gazebo.
+
+
+I hope these tutorials help you understand the basics of Nav2 stack, but obviously, the world of mapping and navigation is huge, so don't stop here!<br/>
+
+Don't hesitate to open issues if you want to discuss them, or in case of errors when running the code.<br/>
+Keep Learning! 
+
