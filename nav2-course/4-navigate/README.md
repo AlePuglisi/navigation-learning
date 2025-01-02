@@ -50,9 +50,10 @@ From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initia
 
 Before any navigation task, we need to initialize the Robot pose (position + orientation).<br/>
 Until we do it, we cannot start any navigation request, and we have a Global Status Error on the Fixed Frame! <br/>
-After clicking in Rviz on "2D Pose Estimate" as in the image above, go to the map with the cursor and position the cursor on the current (x,y) robot position
+
+After clicking in Rviz on ``2D Pose Estimate`` as in the image above, go to the map with the cursor and position the cursor on the current (x,y) robot position
 (in our case it will coincide with the map frame, due to how we have constructed the map). <br/>
-Now, click on this (x,y) Robot position on the map, hold it, and orient the green arrow in the correct robot orientation. <br/>
+Now, click on this (x,y) Robot position on the map, hold it, and orient the green arrow that appears in the correct robot orientation (in our case, towards the map x-axis). <br/>
 
 If you define the correct initial pose, you will see the global/local cost maps and the Lidar Data correctly overlapping with the background map image. 
 
@@ -60,18 +61,39 @@ If you define the correct initial pose, you will see the global/local cost maps 
 
 <image  width=420 height=300 src=https://github.com/user-attachments/assets/ef5c208f-c889-4ce3-be01-c17f77ba06ff>
 
-### 4.b. Send MUltiple Nav2 Goals (Waypoint Follower)
+Once the Initial Pose has been correctly sent, we can start autonomous Navigation. <br/>
+
+In Rviz, click on ``Nav2 Goal`` as in the image above, then position the cursor on the desired Goal position in the map. <br/>
+Finally, click and orient the green arrow that appears with the desired orientation.<br/>
+
+- If the pose selected is feasible, the robot will start to move autonomously towards it and send **REACHED** feedback when the task is completed.<br/>
+  (We can see the feedback both on the terminal and in the bottom left "Navigation 2" section in Rviz). <br/>
+- If the pose is unfeasible, a Recovery Behavior will start, and the navigation task will be **ABORTED**. 
+
+### 4.b. Send Multiple Nav2 Goals (Waypoint Follower)
 
 <image width=420 height=300 src=https://github.com/user-attachments/assets/74b317a1-b761-4fb3-901d-ee65a72ceff3>
+
+When we want to send multiple Navigation Goals, we can do it by using multiple times the ``Nav2 Goal`` functionality, but it is not very efficient...<br/>
+There exist a functionality just for this task, the ``Waypoint/Nav Through Poses Mode``, in the bottom left in Rviz, as in the image above. <br/>
+
+After selecting it, proceed as you did for Sending a Nav2 Goal, but this time you can define multiple goals in sequence, as "waypoint i" (i=1,2,3,..).<br/>
+
+Once all the desired waypoints have been defined in order, click on ``Start Waypoint Following``. <br/>
+This functionality will start a waypoint navigation, stopping in all the poses with the given order. <br/>
+
+If after defining the waypoints we select instead ``Start Nav Through Poses``, the Robot will try to define a path through all these waypoints, without stopping. <br/>
+This functionality is useful for fast navigation, but it is not very stable, use it carefully!
+
 
 ### 5. Test Dynamic Obstacle Avoidance
 
 ## Conclusion
 In this tutorial, you learn how to navigate in a mapped environment.<br/>
-For now, you have to select a 2D Pose Estimate and send a Goal Pose from Rviz2, in the next lectures you will learn how to do it automatically, by interacting with Nav2 from external nodes.<br/>
+For now, you have to select a 2D Pose Estimate and send a Goal Pose from Rviz2, in [Lesson8](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/8-nav2-interaction) you will learn how to do it automatically, by interacting with Nav2 from external code.<br/>
 The waypoint follower tool can be automated too, sending multiple goals from an external file.<br/>
 
-You have a first description of global/local planner, recovery behavior and reference frames (TFs), a detailed explanation of these concepts will be given in [Lesson 5](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/5-architecture).<br/>
+You have a first view of global/local planner, recovery behavior, and reference frames (TFs), a detailed explanation of these concepts will be given in [Lesson 5](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/5-architecture).<br/>
 You also see how, even in the presence of unexpected obstacles, Nav2 Stack can use sensor data to replan the path, avoiding collisions.<br/>
 
 If you want to experiment with navigation in a more "realistic" environment, you can launch the house world (instead of the standard world) by: 
