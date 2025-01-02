@@ -3,7 +3,7 @@ Ubuntu 22.04 | ROS 2 Humble | Nav2 | SLAM | Gazebo
 
 This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. <br/>
 
-(..I'm currently taking this course..) <br/>
+:notebook: Look [here](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/ROS2_Nav2.pdf) for all my handwritten notes! I like being repetitive and writing useless stuff, but believe me, obvious notes often help me!
 
 >[!NOTE]
 > This is not to advertise his course.<br/>
@@ -18,6 +18,7 @@ This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/co
 ## 1. Introduction 
 This course has a learn-by-doing approach, and it is possible to follow it without a real robot, Everything here is done in Gazebo simulation.<br/>
 It is easy to extend this tutorial to a real mobile robot.<br/>
+Take a look at [my Notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/Lesson1_2_Intro_Setup.pdf) for further details.
 
 ### Learning steps: 
 - Discover Nav2 stack with [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
@@ -76,7 +77,6 @@ As usual, to avoid doing it anytime you open a new terminal, add this export to 
 gedit ~/.bashrc
 ```
 Add the line ``export TURTLEBOT3_MODEL=waffle`` at the end of the file, save, and close. 
-
 
 ### SOLVING ISSUES: 
 1) **GAZEBO Simulation**:<br/>
