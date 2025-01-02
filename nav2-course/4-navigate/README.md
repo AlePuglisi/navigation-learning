@@ -1,6 +1,9 @@
 # 4. Make a Robot Navigate with Nav2
+...WIP...
 
-...WIP... 
+<image src=https://github.com/user-attachments/assets/87b642b8-839a-4980-ae9f-e57ddc037831>
+
+
 
 This lesson does not include writing code, but gaining confidence with robot autonomous Navigation using turtlebot3.<br/>
 Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/4-navigate/Lesson4_Navigate.pdf) for a detailed explanation of the lesson!
@@ -36,12 +39,30 @@ This will launch a Gazebo world with the turtlebot3 robot in it (including senso
 # Terminal 2
 ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<relative_path/map_name.yaml>
 ```
+This will launch the navigation functionality of the Nav2 stack, with Rviz properly configured for visualization. <br/>
+``map:=`` argument is used to specify the relative path to the map file, saved preciously during SLAM. 
+
+From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initial Pose Estimate, Navigation Goal, or even multiple Goal Poses at once (waypoints). 
 
 ### 3. Select 2D Pose Estimate
 
+<image width=420 height=300 src=https://github.com/user-attachments/assets/553f9909-a4f4-4bb3-b9b5-7f84340e5e8b>
+
+Before any navigation task, we need to initialize the Robot pose (position + orientation).<br/>
+Until we do it, we cannot start any navigation request, and we have a Global Status Error on the Fixed Frame! <br/>
+After clicking in Rviz on "2D Pose Estimate" as in the image above, go to the map with the cursor and position the cursor on the current (x,y) robot position
+(in our case it will coincide with the map frame, due to how we have constructed the map). <br/>
+Now, click on this (x,y) Robot position on the map, hold it, and orient the green arrow in the correct robot orientation. <br/>
+
+If you define the correct initial pose, you will see the global/local cost maps and the Lidar Data correctly overlapping with the background map image. 
+
 ### 4.a. Send a Nav2 Goal 
 
+<image  width=420 height=300 src=https://github.com/user-attachments/assets/ef5c208f-c889-4ce3-be01-c17f77ba06ff>
+
 ### 4.b. Send MUltiple Nav2 Goals (Waypoint Follower)
+
+<image width=420 height=300 src=https://github.com/user-attachments/assets/74b317a1-b761-4fb3-901d-ee65a72ceff3>
 
 ### 5. Test Dynamic Obstacle Avoidance
 
