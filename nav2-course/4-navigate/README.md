@@ -1,9 +1,6 @@
 # 4. Make a Robot Navigate with Nav2
-...WIP...
 
 <image src=https://github.com/user-attachments/assets/87b642b8-839a-4980-ae9f-e57ddc037831>
-
-
 
 This lesson does not include writing code, but gaining confidence with robot autonomous Navigation using turtlebot3.<br/>
 Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/4-navigate/Lesson4_Navigate.pdf) for a detailed explanation of the lesson!
@@ -47,6 +44,7 @@ From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initia
 ### 3. Select 2D Pose Estimate
 
 <image width=420 height=300 src=https://github.com/user-attachments/assets/553f9909-a4f4-4bb3-b9b5-7f84340e5e8b>
+<image src=https://github.com/user-attachments/assets/a7a055a8-ab66-4b66-93e8-ab7452e40b2b>
 
 Before any navigation task, we need to initialize the Robot pose (position + orientation).<br/>
 Until we do it, we cannot start any navigation request, and we have a Global Status Error on the Fixed Frame! <br/>
@@ -101,6 +99,8 @@ When the obstacle is not only unexpected but also moving with a fast dynamic, th
 
 Here we will test how the path is replanned when an unexpected static obstacle appears in the map.<br/>
 This can occur for example when we have the map of a building, but it is incorrect due to furniture added after the mapping generation.<br/>
+
+<image src=https://github.com/user-attachments/assets/9e864797-6948-49b1-9d78-681ffc998aa0>
 
 To test it in Gazebo: 
 1. Start simulation world 
