@@ -152,9 +152,10 @@ This is the time to leave behind our friend turtlebot3 and understand how to mak
 Unfortunately, this is a hard process, here you will see just a steps overview. <br/>
 In particular, by looking at the Nav2 Architecture inputs/outputs we will focus on: <br>
 - Needed TFs (map->odom, odom->base_link, base_link->base_scan)
-- Odometry (map->odom): How to provide it
-- Sensor Data: How to set up sensors
-- Hardware Controller: How to convert velocity commands into motor commands
+- **Odometry**(map->odom): How to provide it
+- **Sensor Data**: How to set up sensors
+- **Hardware Controller**: How to convert velocity commands into motor commands
+  
 Then, you will see what packages you need to launch SLAM and Navigation with a custom Robot and where the important configuration parameters are.
 
 ## 8. [Nav2 Interaction API](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/8-nav2-interaction), using nav2_simple_commander
