@@ -1,5 +1,7 @@
 # 5. Understand the Nav2 Stack
 
+...WIP...
+
 This lesson does not include writing code. <br/>
 Refer to previous Lessons' commands and packages to explore the theoretical concepts explained here. <br/>
 
