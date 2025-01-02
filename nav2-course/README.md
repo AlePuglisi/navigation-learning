@@ -3,7 +3,7 @@ Ubuntu 22.04 | ROS 2 Humble | Nav2 | SLAM | Gazebo
 
 This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. <br/>
 
-:notebook: Look [here](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/ROS2_Nav2.pdf) for all my handwritten notes! I like being repetitive and writing useless stuff, but believe me, obvious notes often help me!
+:notebook: Download [here](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/ROS2_Nav2.pdf) my handwritten notes on this course! I like being repetitive and writing "useless" stuff, but obvious notes often helped, believe me!
 
 >[!NOTE]
 > This is not to advertise his course.<br/>
@@ -109,9 +109,9 @@ Add the line ``export TURTLEBOT3_MODEL=waffle`` at the end of the file, save, an
      `` export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ``<br/>
    
    - **Modify Nav2 Parameter file**:<br/>
-     To use turtlebot3 for Navigation, we need to make a quick fix on the parameter file related to the robot model we are going to use.<br/>
-     During this course, we are going to use the **Waffle** model, so we are going to modify ``waffle.yaml``.<br/>
-     First, we move to the proper location, and then we modify with superuser rights the parameter file: 
+     To use turtlebot3 for Navigation, you need to make a quick fix on the parameter file related to the robot model you are going to use.<br/>
+     During this course, we are going to use the **Waffle** model, so you are going to modify ``waffle.yaml``.<br/>
+     First, move to the proper location, and then modify (with superuser rights) the parameter file: 
      ```bash
      # Terminal 
      cd /opt/ros/humble/share/turtlebot3_navigation2/param
@@ -135,14 +135,34 @@ Give Nav2 Goal as an objective pose or multiple goals as waypoints.
 ## 5. [Architecture](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/5-architecture), understand Nav2 Stack
 
 What are the main components of Nav2 Stack? <br/>
-Up to this lesson, we learn the stack with [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3).<br/>
+Up to this lesson, you learn the stack with [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3).<br/>
 Understanding the global architecture and each component (global and local planner, etc..) is fundamental to set up a custom robot navigating in a custom environment.<br/>
 Interacting with the Nav2 stack from external custom nodes also requires a better understanding of the architecture behind it!
 
-## 6. ... WIP ...
+## 6. [Custom World](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/6-custom-world)
 
-## 7.
+How to map and navigate in **your custom simulation environment**? 
+In this lecture, you will learn how to create your own world with the [Gazebo Building Editor](https://classic.gazebosim.org/tutorials?tut=building_editor).
+Also, creating the world is not enough, details on how to integrate this new world in a ROS 2 package will be given. <br/>
+Finally, you will get some tips on how to post-process the map obtained with SLAM, to get a better map for navigation. <br/>
 
-## 8.
+## 7. [Custom Robot](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/7-custom-robot)
 
-## 9.
+This is the time to leave behind our friend turtlebot3 and understand how to make your Robot compatible with Nav2 Stack. <br/>
+Unfortunately, this is a hard process, here you will see just a steps overview. <br/>
+In particular, by looking at the Nav2 Architecture inputs/outputs we will focus on: <br>
+- Needed TFs (map->odom, odom->base_link, base_link->base_scan)
+- Odometry (map->odom): How to provide it
+- Sensor Data: How to set up sensors
+- Hardware Controller: How to convert velocity commands into motor commands
+Then, you will see what packages you need to launch SLAM and Navigation with a custom Robot and where the important configuration parameters are.
+
+## 8. [Nav2 Interaction API](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/8-nav2-interaction)
+
+What if you want to interact with Nav2 Stack from an external script (like a custom ROS 2 Node)?<br/>
+Up to now, you have used Rviz2 to set Initial Pose and send Nav2 Goal or Waypoints, but it is not practical for a programmatic interaction. <br/>
+In the background, Nav2 works with the usual ROS Communication tools, such as publish/subscribe, actions, etc...<br/>
+So, it is possible to interact with it from external code, and there is no need to write your code from scratch, a very useful Python API exists!<br/>
+Using [nav2_simple_commander](https://docs.nav2.org/commander_api/index.html) API, you will programmatically interact with Nav2 from a python script. 
+
+## 9. [Conclusion]
