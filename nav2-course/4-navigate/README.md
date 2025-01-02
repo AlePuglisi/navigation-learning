@@ -1,5 +1,7 @@
 # 4. Make a Robot Navigate with Nav2
 
+...WIP... 
+
 This lesson does not include writing code, but gaining confidence with robot autonomous Navigation using turtlebot3.<br/>
 Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/4-navigate/Lesson4_Navigate.pdf) for a detailed explanation of the lesson!
 
