@@ -88,6 +88,37 @@ This functionality is useful for fast navigation, but it is not very stable, use
 
 ### 5. Test Dynamic Obstacle Avoidance
 
+An important feature of the Navigation stack is the dynamic obstacle avoidance.<br/>
+Up to now, we have used a static map, with walls and obstacles already known from the map generated previously.<br/>
+This map is used by the global planner to generate the global path, updated at low frequency.<br/> 
+The local planner instead updates the trajectory at high frequency, according to the sensor data around the robot. <br/>
+
+We will see how those planners and cost maps work in the [next lesson](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/5-architecture), this initial description is useful to understand this dynamic avoidance feature. <br/>
+
+If during navigation unexpected obstacles appear on the path, thanks to sensor data, the map gets updated and as soon as the global planner replans the path, it will update it considering the new obstacles.<br/>
+
+When the obstacle is not only unexpected but also moving with a fast dynamic, thanks to the higher local planner frequency update, it is possible to avoid it! <br/>
+
+Here we will test how the path is replanned when an unexpected static obstacle appears in the map.<br/>
+This can occur for example when we have the map of a building, but it is incorrect due to furniture added after the mapping generation.<br/>
+
+To test it in Gazebo: 
+1. Start simulation world 
+  ```bash
+  # Terminal 1
+  ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+  ```
+2. Start the Navigation stack
+  ```bash
+  # Terminal 2
+  ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<relative_path/map_name.yaml>
+  ```
+3. Set 2D Pose Estimate
+4. Send a Nav2Goal,<br/>
+  **Before any Robot movement, Pause the Gazebo simulation as soon as the path is planned**
+5. In Gazebo, go to the ``Insert`` section, and add an obstacle in the path
+6. Play the Gazebo simulation (Re-click on Pause button)
+
 ## Conclusion
 In this tutorial, you learn how to navigate in a mapped environment.<br/>
 For now, you have to select a 2D Pose Estimate and send a Goal Pose from Rviz2, in [Lesson8](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/8-nav2-interaction) you will learn how to do it automatically, by interacting with Nav2 from external code.<br/>
