@@ -139,14 +139,14 @@ Up to this lesson, you learn the stack with [turtlebot3](https://github.com/ROBO
 Understanding the global architecture and each component (global and local planner, etc..) is fundamental to set up a custom robot navigating in a custom environment.<br/>
 Interacting with the Nav2 stack from external custom nodes also requires a better understanding of the architecture behind it!
 
-## 6. [Custom World](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/6-custom-world)
+## 6. [Custom World](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/6-custom-world), Create Gazebo environment and launch it 
 
 How to map and navigate in **your custom simulation environment**? 
 In this lecture, you will learn how to create your own world with the [Gazebo Building Editor](https://classic.gazebosim.org/tutorials?tut=building_editor).
 Also, creating the world is not enough, details on how to integrate this new world in a ROS 2 package will be given. <br/>
 Finally, you will get some tips on how to post-process the map obtained with SLAM, to get a better map for navigation. <br/>
 
-## 7. [Custom Robot](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/7-custom-robot)
+## 7. [Custom Robot](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/7-custom-robot), Adapting for Nav2 (Steps Overview)
 
 This is the time to leave behind our friend turtlebot3 and understand how to make your Robot compatible with Nav2 Stack. <br/>
 Unfortunately, this is a hard process, here you will see just a steps overview. <br/>
@@ -157,7 +157,7 @@ In particular, by looking at the Nav2 Architecture inputs/outputs we will focus 
 - Hardware Controller: How to convert velocity commands into motor commands
 Then, you will see what packages you need to launch SLAM and Navigation with a custom Robot and where the important configuration parameters are.
 
-## 8. [Nav2 Interaction API](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/8-nav2-interaction)
+## 8. [Nav2 Interaction API](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/8-nav2-interaction), using nav2_simple_commander
 
 What if you want to interact with Nav2 Stack from an external script (like a custom ROS 2 Node)?<br/>
 Up to now, you have used Rviz2 to set Initial Pose and send Nav2 Goal or Waypoints, but it is not practical for a programmatic interaction. <br/>
@@ -165,4 +165,4 @@ In the background, Nav2 works with the usual ROS Communication tools, such as pu
 So, it is possible to interact with it from external code, and there is no need to write your code from scratch, a very useful Python API exists!<br/>
 Using [nav2_simple_commander](https://docs.nav2.org/commander_api/index.html) API, you will programmatically interact with Nav2 from a python script. 
 
-## 9. [Conclusion]
+## 9. Conclusion
