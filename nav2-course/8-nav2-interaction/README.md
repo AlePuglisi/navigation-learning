@@ -46,7 +46,7 @@ ros2 topic echo /initialpose
 
 This topic subscription is used by the Nav2 stack to receive the 2D Pose Estimate. <br/>
 Also, by investigating this topic info, we can see that it is not easy to fill this message. <br/>
-This is a ``geometry_msgs/msg/PoseWithCovarianceStamped``[https://docs.ros2.org/foxy/api/geometry_msgs/msg/PoseWithCovarianceStamped.html],<br/>
+This is a ``geometry_msgs/msg/PoseWithCovarianceStamped``(https://docs.ros2.org/foxy/api/geometry_msgs/msg/PoseWithCovarianceStamped.html),<br/>
 nav2_simple_commander helps us to initialize it with a simple Python method. 
 
 - **Nav2 Goal**<br/>
