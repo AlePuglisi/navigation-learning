@@ -42,10 +42,12 @@ touch nav2_test.py
 chmod +x nav2_test.py
 ```
 
-Refer to [my script](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test.py).<br/>
-A big part of the code has been commented out, which corresponds to a previous implementation of some computations.<br/> 
-The same computations have been rewritten into functions easy to reuse. 
+Refer to [``nav2_test.py``](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test.py), you can copy and paste it.<br/>
 
+> [!NOTE]
+> A big part of the code has been commented out, this is a previous implementation of some computations.<br/> 
+> The same computations have been rewritten as functions, for reusability. <br/>
+> I keep that unused code because it may help to understand the workflow. <br/>
 
 ### Test the Code
 ### 1. Launch Simulation Environment
@@ -68,22 +70,27 @@ This will launch the navigation functionality of the Nav2 stack, with Rviz prope
 From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initial Pose Estimate, Navigation Goal, or even multiple Goal Poses at once (waypoints). 
 
 ### 3. Run the Python code to send Nav commands 
-In a new Terminal, move to the directory where you create the Python script: 
+In a new Terminal, move to the directory where you create the Python script. <br/>
 
-#### Initialize the pose:
+I manage the selection of the navigation task (initialization, single goal, waypoints) using command line arguments. <br/>
+Every time you want to send a specific navigation task to Nav2, rerun the script with the appropriate argument: <br/>
+
+- #### Initialize the Pose:
 ```bash
 # Terminal 3
 python3 nav2_test.py initialize 
 ```
-#### Send single Nav2 Goal:
+- #### Send Single Nav2 Goal:
 ```bash
 # Terminal 3
 python3 nav2_test.py goal 
 ```
-#### Send Waypoints:
+- #### Send Waypoints:
 ```bash
 # Terminal 3
 python3 nav2_test.py waypoints 
 ```
 
 ## Conclusion 
+
+If you want to make this script even more general, use the arguments (accessed by ``sys.argv[]``) to define the Goal pose or the waypoints, instead of hardcoding it.<br/>
