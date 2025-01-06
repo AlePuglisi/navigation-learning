@@ -29,6 +29,28 @@ But before coding, let's understand how the API interact with the ROS2 communica
 
 Behind the scenes of Nav2, we find the usual ROS2 communication and interaction tools, topics, services, and actions.<br/>
 
+Some examples are useful to understand what will happen next. <br/>
+Launch the robot simulation and navigation stack, as explained before, and see with your eyes what are the topics, services, and actions available. <br/>
+
+- **2D Pose Estimate**<br/>
+
+The initialization of the Pose estimate is managed in Nav2 Stack from the message exchanged in the ``/initialpose`` topic.<br/>
+Try to start the robot simulation and navigation tool as explained before, then open a new terminal and echo that topic. <br/>
+As soon as you will set the 2D Pose Estimate from Rviz GUI; you will see it published on that topic! <br/>
+```bash
+# Terminal 
+ros2 topic echo /initialpose
+```
+
+This topic subscription is used by the Nav2 stack to receive the 2D Pose Estimate. 
+
+- **Nav2 Goal**<br/>
+
+This is a task that requires continuous feedback to manage step-by-step navigation toward the goal, you already know what you need, a ROS2 Action! <br/>
+
+
+- **Waypoint Follower**<br/>
+
 
 ## Tutorial and script
 
@@ -104,26 +126,29 @@ Every time you want to send a specific navigation task to Nav2, rerun the script
   > Always start with this, to select the 2D Pose Estimate, fundamental for any upcoming navigation task. <br/>
   > Also, run it only once at the beginning, or the pose estimate will be messed up if the wrong location is sent. <br/>
     
-    ```bash
-    # Terminal 3
-    python3 nav2_test.py initialize 
-    ```
+  ```bash
+  # Terminal 3
+  python3 nav2_test.py initialize 
+  ```
+
   - #### Send Single Nav2 Goal:
   
     This will start a **Nav2 Goal** navigation, towards the goal pose denied in nav2_test.py
-    ```bash
-    # Terminal 3
-    python3 nav2_test.py goal 
-    ```
+
+
+   ```bash
+     # Terminal 3
+     python3 nav2_test.py goal 
+   ```
   
   - #### Send Waypoints:
     
     This will start the **Waypoint Following** functionality, through the waypoints defined in nav2_test.py
     
-    ```bash
+   ```bash
     # Terminal 3
     python3 nav2_test.py waypoints 
-    ```
+   ```
 
 ## Conclusion 
 
