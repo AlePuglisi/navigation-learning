@@ -22,7 +22,7 @@ To do so, we rely on a Python API to interact with Nav2, the nav2_simple_command
 
 In this tutorial, you will understand the basics of nav2_simple_commander and write a simple Python script to initialize the Pose, send Nav2 Goals, and start the waypoints following. <br/>
 
-But before coding, let's understand how the API interact with the ROS2 communication Network.
+But before coding, let's understand how the API interacts with the ROS2 communication Network.
 
 
 ## How does Nav2 work behind the curtains? 
@@ -37,20 +37,36 @@ Launch the robot simulation and navigation stack, as explained before, and see w
 The initialization of the Pose estimate is managed in Nav2 Stack from the message exchanged in the ``/initialpose`` topic.<br/>
 Try to start the robot simulation and navigation tool as explained before, then open a new terminal and echo that topic. <br/>
 As soon as you will set the 2D Pose Estimate from Rviz GUI; you will see it published on that topic! <br/>
+
 ```bash
-# Terminal 
+# Terminal
+ros2 topic info /initialpose
 ros2 topic echo /initialpose
 ```
 
-This topic subscription is used by the Nav2 stack to receive the 2D Pose Estimate. 
+This topic subscription is used by the Nav2 stack to receive the 2D Pose Estimate. <br/>
+Also, by investigating this topic info, we can see that it is not easy to fill this message. <br/>
+This is a ``geometry_msgs/msg/PoseWithCovarianceStamped``[https://docs.ros2.org/foxy/api/geometry_msgs/msg/PoseWithCovarianceStamped.html],<br/>
+nav2_simple_commander helps us to initialize it with a simple Python method. 
 
 - **Nav2 Goal**<br/>
 
 This is a task that requires continuous feedback to manage step-by-step navigation toward the goal, you already know what you need, a ROS2 Action! <br/>
+``navigate_to_pose`` is the action used for this.
 
+```bash
+# Terminal
+ros2 action info /navigate_to_pose
+```
 
 - **Waypoint Follower**<br/>
 
+``follow_waypoints`` is the action used for this.
+
+```bash
+# Terminal
+ros2 action info /follow_waypoints
+```
 
 ## Tutorial and script
 
