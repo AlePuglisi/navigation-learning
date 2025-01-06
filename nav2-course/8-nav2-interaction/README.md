@@ -151,7 +151,9 @@ Return the navigation action feedback, to analyze the state of the task executio
 - ``BasicNavigator.getResult()``: <br/>
 Return the final result of the navigation task, as SUCCEEDED or ABORTED <br/>
 
-Look at [``nav2_test.py``](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test.py) for a commented example usage of these methods.
+Look at [``nav2_test.py``](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test.py) for a clearly commented example of these methods.<br/>
+While [``nav2_test_template.py``](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test_template.py) for a clean version of the script, without excessive comments. <br/>
+You can easily use it as a template for your own project!
 
 ### Test the Code
 ### 1. Launch Simulation Environment
