@@ -1,5 +1,5 @@
 # ROS2 Nav2 - with SLAM and Navigation
-Ubuntu 22.04 | ROS 2 Humble | Nav2 | SLAM | Gazebo 
+Ubuntu 22.04 | ROS 2 Humble | Nav2 | SLAM | Gazebo (Classic)
 
 This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. <br/>
 
@@ -17,7 +17,7 @@ I like being repetitive and writing "useless" stuff, but "stupid" comments and r
 - Linux CLI basics
 
 ## 1. Introduction 
-This course has a learn-by-doing approach, and it is possible to follow it without a real robot, Everything here is done in Gazebo simulation.<br/>
+This course has a learn-by-doing approach, and it is possible to follow it without a real robot, Everything here is done in Gazebo Classic simulation.<br/>
 It is easy to extend this tutorial to a real mobile robot.<br/>
 Take a look at [my Notes](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/Lesson1_2_Intro_Setup.pdf) for further details.
 
@@ -176,7 +176,7 @@ An intuitive explanation of the Stack architecture has been given, and you see a
 > The course is based on ROS2 Humble with Gazebo Classic, unfortunately in January 2025, Gazebo Classic reaches end-of-life.<br/>
 > This doesn't mean that it will not work anymore, but it will no longer be supported. <br/>
 > So, consider using this tutorial to understand the basics of Nav2, which remain the same, <br/>
-> but explore what are the differences when you work with Nav2 in the new Ignition Gazebo.
+> but explore what are the differences when you work with Nav2 in the new Gazebo (gazebo sim).
 
 
 I hope these tutorials help you understand the basics of Nav2 stack, but obviously, the world of mapping and navigation is huge, so don't stop here!<br/>
