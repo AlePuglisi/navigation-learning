@@ -1,5 +1,4 @@
 # 8. Interact Programmatically With the Navigation Stack
-...WIP...
 
 <image height=250, width = 800, src=https://github.com/user-attachments/assets/21105b70-3012-448a-b219-b54b236be8e8>
 
@@ -102,8 +101,24 @@ Refer to [``nav2_test.py``](https://github.com/AlePuglisi/navigation-learning/bl
 
 ### Understanding nav2_test.py
 
-For a detailed explanation of the usage of this Python API, refer to the [documentation](https://docs.nav2.org/commander_api/index.html). <br/>
-Here I will give a simple description of the function used in this lesson. 
+For a detailed explanation of this Python API, take a look at the [documentation](https://docs.nav2.org/commander_api/index.html). <br/>
+In this tutorial, I will briefly describe the methods used in this lesson. 
+
+- ``BasicNavigator()``: <br/>
+
+- ``BasicNavigator.setInitialPose()``: <br/>
+
+- ``BasicNavigator.waitUntilNav2Active()``: <br/>
+
+- ``BasicNavigator.goToPose()``: <br/>
+
+- ``BasicNavigator.getFeedback()``: <br/>
+
+- ``BasicNavigator.followWaypoints()``: <br/>
+
+- ``BasicNavigator.isTaskComplete()``: <br/>
+
+- ``BasicNavigator.getResult()``: <br/>
 
 
 ### Test the Code
@@ -168,4 +183,6 @@ Every time you want to send a specific navigation task to Nav2, rerun the script
 
 ## Conclusion 
 
-If you want to make this script even more general, use the arguments (accessed by ``sys.argv[]``) to define the Goal pose or the waypoints, instead of hardcoding it.<br/>
+Consider this lesson as a simple introduction to nav2_simple_commander Python API, explore the [documentation](https://docs.nav2.org/commander_api/index.html) to see all the available functionality! <br/>
+
+If you want to make this ``nav2_test.py`` script even more general, use the arguments (accessed by ``sys.argv[]``) to define the Goal pose or the waypoints, instead of hardcoding it.<br/>
