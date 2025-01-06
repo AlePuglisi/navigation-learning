@@ -19,7 +19,7 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 
 ## Tutorial and script
 
-### 0. Install the API
+- ### Install the API
 First, install the package to use the API in your Python code:
 
 ```bash
@@ -27,7 +27,7 @@ First, install the package to use the API in your Python code:
 sudo apt install ros-<distro>-nav2-simple-commander 
 ```
 
-### Write your custom Python code to interact with Nav2
+- ### Write your custom Python code to interact with Nav2
 
 For simplicity, here we will write a simple Python script to interact with Nav2, using nav2_simple_commander.<br/>
 to fully integrate this in your ROS2 project, this functionality can be easily integrated into a ROS2 Node written in Python. <br/>
@@ -49,7 +49,7 @@ Refer to [``nav2_test.py``](https://github.com/AlePuglisi/navigation-learning/bl
 > The same computations have been rewritten as functions, for reusability. <br/>
 > I keep that unused code because it may help to understand the workflow. <br/>
 
-### Test the Code
+- ### Test the Code
 ### 1. Launch Simulation Environment
 <image width=300 height=250 src=https://github.com/user-attachments/assets/5721b386-5d3f-4796-8e00-e7a3e1720bf2>
 
@@ -69,23 +69,36 @@ This will launch the navigation functionality of the Nav2 stack, with Rviz prope
 
 From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initial Pose Estimate, Navigation Goal, or even multiple Goal Poses at once (waypoints). 
 
-### 3. Run the Python code to send Nav commands 
+### 3. Run the Python Script
 In a new Terminal, move to the directory where you create the Python script. <br/>
 
 I manage the selection of the navigation task (initialization, single goal, waypoints) using command line arguments. <br/>
 Every time you want to send a specific navigation task to Nav2, rerun the script with the appropriate argument: <br/>
 
 - #### Initialize the Pose:
+
+This will initialize **2D Pose Estimate**, as defined in nav2_test.py.<br/>
+
+> [!IMPORTANT]
+> Always start with this, to select the 2D Pose Estimate, fundamental for any upcoming navigation task. <br/>
+> Also, run it only once at the beginning, or the pose estimate will be messed up if the wrong location is sent. <br/>
+
 ```bash
 # Terminal 3
 python3 nav2_test.py initialize 
 ```
 - #### Send Single Nav2 Goal:
+
+This will start a **Nav2 Goal** navigation, towards the goal pose denied in nav2_test.py
 ```bash
 # Terminal 3
 python3 nav2_test.py goal 
 ```
+
 - #### Send Waypoints:
+  
+This will start the **Waypoint Following** functionality, through the waypoints defined in nav2_test.py
+
 ```bash
 # Terminal 3
 python3 nav2_test.py waypoints 
