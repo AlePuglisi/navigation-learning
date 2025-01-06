@@ -39,7 +39,7 @@ Open a terminal and move to the directory where you want to create the Python sc
 # Create the file
 touch nav2_test.py
 # Make it an executable
-chmod + x nav2_test.py
+chmod +x nav2_test.py
 ```
 
 Refer to [my script](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test.py).<br/>
@@ -68,5 +68,22 @@ This will launch the navigation functionality of the Nav2 stack, with Rviz prope
 From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initial Pose Estimate, Navigation Goal, or even multiple Goal Poses at once (waypoints). 
 
 ### 3. Run the Python code to send Nav commands 
+In a new Terminal, move to the directory where you create the Python script: 
+
+#### Initialize the pose:
+```bash
+# Terminal 3
+python3 nav2_test.py initialize 
+```
+#### Send single Nav2 Goal:
+```bash
+# Terminal 3
+python3 nav2_test.py goal 
+```
+#### Send Waypoints:
+```bash
+# Terminal 3
+python3 nav2_test.py waypoints 
+```
 
 ## Conclusion 
