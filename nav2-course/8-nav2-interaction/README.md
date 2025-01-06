@@ -15,7 +15,20 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
   
 ## Description 
 
+Up to now, we interact with Nav2 using Rviz GUI. <br/>
+This is not convenient when you want to develop a complete project, maybe you want to send a goal from your own ROS 2 node. <br/>
+If you consider a vision-based navigation project, once we identify the goal position with a computer vision algorithm, we send this goal automatically from our node. <br/>
+To do so, we rely on a Python API to interact with Nav2, the nav2_simple_commander. <br/>
+
+In this tutorial, you will understand the basics of nav2_simple_commander and write a simple Python script to initialize the Pose, send Nav2 Goals, and start the waypoints following. <br/>
+
+But before coding, let's understand how the API interact with the ROS2 communication Network.
+
+
 ## How does Nav2 work behind the curtains? 
+
+Behind the scenes of Nav2, we find the usual ROS2 communication and interaction tools, topics, services, and actions.<br/>
+
 
 ## Tutorial and script
 
@@ -76,6 +89,8 @@ This will launch the navigation functionality of the Nav2 stack, with Rviz prope
 From now on, we will use Rviz GUI to interact with Nav2 Stack, to set the Initial Pose Estimate, Navigation Goal, or even multiple Goal Poses at once (waypoints). 
 
 ### 3. Run the Python Script
+<image src=https://github.com/user-attachments/assets/fa6e8698-ae4f-4652-9136-8381cdb02011>
+
 In a new Terminal, move to the directory where you create the Python script. <br/>
 
 I manage the selection of the navigation task (initialization, single goal, waypoints) using command line arguments. <br/>
