@@ -11,6 +11,9 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 - [``turtlebot3_gazebo``](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/main/turtlebot3_gazebo): for Gazebo Simulation
 - [``turtlebot3_navigation2``](https://github.com/ROBOTIS-GIT/turtlebot3/tree/main/turtlebot3_navigation2) for Robot Navigation
 - [``nav2_simple_commander``](https://github.com/ros-navigation/navigation2/tree/main/nav2_simple_commander) Python API to Nav2
+
+### Additional Library 
+- ``tf_transformations`` 
   
 ## Description 
 
@@ -69,13 +72,31 @@ ros2 action info /follow_waypoints
 
 ## Tutorial and script
 
-### Install the API
+### Install the API and additional Packages 
 First, install the package to use the API in your Python code:
 
 ```bash
 # Terminal 0
 sudo apt install ros-<distro>-nav2-simple-commander 
 ```
+Then, install an additional package and Python library used in this tutorial:<br/>
+
+```bash
+# Terminal 0
+sudo apt install ros-<distro>-tf-transformations
+sudo apt install python3-transforms3d 
+```
+
+This is needed to manage orientation conversion from Euler to quaternion.<br/>
+Robot pose is defined in quaternion, being it easier to manage for computation.<br/>
+
+> [!IMPORTANT]
+> If when running the code you have errors related to tf_transformations import, upgrade it with pip
+```bash
+# Terminal 0
+pip install --upgrade transforms3d
+```
+
 
 ### Write your custom Python code to interact with Nav2
 
@@ -105,21 +126,32 @@ For a detailed explanation of this Python API, take a look at the [documentation
 In this tutorial, I will briefly describe the methods used in this lesson. 
 
 - ``BasicNavigator()``: <br/>
+Object to initialize Nav2 API. This object contains all the methods to interact with Nav2. 
 
-- ``BasicNavigator.setInitialPose()``: <br/>
+- ``BasicNavigator.setInitialPose(geometry_msgs.msg.PoseStamped)``: <br/>
+Initialize the pose, even if Nav2 uses a ``PoseWithCovaranceStamped``, you can pass a simple ``PoseStamped``. <br/>
+The proper definition of Covariance will be handled by the method. 
 
 - ``BasicNavigator.waitUntilNav2Active()``: <br/>
+Wait for Nav2 Stack to be ready after pose initialization. <br/>
+Needed before starting any navigation task. 
 
-- ``BasicNavigator.goToPose()``: <br/>
+- ``BasicNavigator.goToPose(geometry_msgs.msg.PoseStamped)``: <br/>
+Start a navigation task toward the defined pose.<br/>
 
-- ``BasicNavigator.getFeedback()``: <br/>
-
-- ``BasicNavigator.followWaypoints()``: <br/>
+- ``BasicNavigator.followWaypoints(geometry_msgs.msg.PoseStamped[])``: <br/>
+Start a "waypoint following" task, through the poses defined as a list of PoseStamped goals.<br/>
 
 - ``BasicNavigator.isTaskComplete()``: <br/>
+Return true when the task is completed, useful to define loops until the navigation task is done. <br/>
+
+- ``BasicNavigator.getFeedback()``: <br/>
+Return the navigation action feedback, to analyze the state of the task execution. <br/>
 
 - ``BasicNavigator.getResult()``: <br/>
+Return the final result of the navigation task, as SUCCEEDED or ABORTED <br/>
 
+Look at [``nav2_test.py``](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/8-nav2-interaction/nav2_test.py) for a commented example usage of these methods.
 
 ### Test the Code
 ### 1. Launch Simulation Environment
