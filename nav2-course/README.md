@@ -3,7 +3,8 @@ Ubuntu 22.04 | ROS 2 Humble | Nav2 | SLAM | Gazebo
 
 This Resource is based on the course on Nav2 on [Udemy](https://www.udemy.com/course/ros2-nav2-stack/?srsltid=AfmBOooiAWhc3jH4Gwttw345eHEBR6KJ7WLRfCRzbN5M8y_iSPS0GvtT&couponCode=KEEPLEARNING) by Edouard Renard. <br/>
 
-:notebook: Download [here](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/ROS2_Nav2.pdf) my handwritten notes on this course! I like being repetitive and writing "useless" stuff, but obvious notes often helped, believe me!
+:notebook: Download [here](https://github.com/AlePuglisi/navigation-learning/blob/main/nav2-course/ROS2_Nav2.pdf) my handwritten notes on this course! <br/>
+I like being repetitive and writing "useless" stuff, but "stupid" comments and reminders often helped, believe me!
 
 >[!NOTE]
 > This is not to advertise his course.<br/>
