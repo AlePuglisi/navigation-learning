@@ -21,7 +21,7 @@ You will see how to send a goal or a set of goals (waypoints), what happens if t
 > When launching ``turtlebot3_navigation2  navigation2.launch.py``, Rviz2 is opened, but the map is not loaded, even if the arguments are given correctly.<br/>
 > You can solve this issue by following the steps I explained [here](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course#solving-issues).
 
-### 1. Launch simulation environment
+### 1. Launch Simulation Environment
 <image width=300 height=250 src=https://github.com/user-attachments/assets/5721b386-5d3f-4796-8e00-e7a3e1720bf2>
 
 ```bash
@@ -30,7 +30,7 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 This will launch a Gazebo world with the turtlebot3 robot in it (including sensors such as 2D Lidar)  
 
-### 2. Launch Navigation feature
+### 2. Launch Navigation Tool
 
 ```bash
 # Terminal 2
