@@ -62,7 +62,7 @@ def main():
 
     # 2. Use that pose to initialize the pose 
     # If you want to setInitialPose, launch the script with argoument: Initialize
-    if sys.argv[1] == "Initialize":
+    if sys.argv[1] == "initialize":
         print("Initialize Pose")
         print(initial_pose)
         nav.setInitialPose(initial_pose)
@@ -100,7 +100,7 @@ def main():
 
     # --- Go to One pose: ---
     # If you want to goToPose, launch the script with argoument: Goal
-    if sys.argv[1] == "Goal":
+    if sys.argv[1] == "goal":
         print("Single Goal Navigation")
         # 2.a Use that pose to send the goal  
         nav.goToPose(goal_pose1)
@@ -112,7 +112,7 @@ def main():
     
     # --- Follow Waypoints ---
     # If you want to followWaypoints, launch the script with argoument: Waypoints
-    if sys.argv[1] == "Waypoints":
+    if sys.argv[1] == "waypoints":
         print("Waypoint Follower Navigation")
         # 2.b Create an array of goal_pose, which is our waypoint goal
         waypoints = [goal_pose1, goal_pose2, goal_pose3]
