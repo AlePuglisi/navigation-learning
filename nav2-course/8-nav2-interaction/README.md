@@ -13,7 +13,7 @@ Take a look at [my notes](https://github.com/AlePuglisi/navigation-learning/blob
 - [``nav2_simple_commander``](https://github.com/ros-navigation/navigation2/tree/main/nav2_simple_commander) Python API to Nav2
 
 ### Additional Library 
-- ``tf_transformations`` 
+- ``tf_transformations``: used for Euler angle  to quaternion orientation conversion
   
 ## Description 
 
@@ -27,7 +27,7 @@ In this tutorial, you will understand the basics of nav2_simple_commander and wr
 But before coding, let's understand how the API interacts with the ROS2 communication Network.
 
 
-## How does Nav2 work behind the curtains? 
+## How does Nav2 works behind the curtains? 
 
 Behind the scenes of Nav2, we find the usual ROS2 communication and interaction tools, topics, services, and actions.<br/>
 
