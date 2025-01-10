@@ -52,9 +52,9 @@ They are defined as usual in a ``.yaml`` configuration file, for example in the 
 cd /opt/ros/humble/share/turtlebot3_navigation2/param
 ls
 ```
-
 As you can see, there is one configuration file per each turtlebot model. <br/>
 
+#### Visualize Parameters with a GUI
 
 A simple-to-use tool for parameter analysis and update can be found by launching ``rqt``, we will use it: 
 
@@ -68,7 +68,35 @@ rqt
 
 Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigure
 
+#### Some parameters description: 
 
+- **/global_costmap/global_costmap**: <br/>
+   Under this, you find the live parameters for the global cost map configuration
+    - **publish_frequency**: <br/>
+       Global Costmap update frequency (Hz)
+    - **infation_layer.inflation_radius**: <br/>
+       Radius (m) around obstacles at which we still consider the space not free.<br/>
+       This ensures safe navigation, avoiding maneuvering too close to obstacles. <br/>
+       A trade-off is needed, if too big even free space is hard to traverse, and if too small collision can occur. 
+    - **robot_radius**: 
+    - **resolution**:<br/>
+     ...
+      
+-  **/local_costmap/local_costmap**: <br/>
+    Under this, you find the live parameters for the local cost map configuration (almost the same as in global_costmap)<br/>
+    - **inflation_radius**:<br/>
+    ...
+      
+- **/controller_server**: Under this, you find the live parameters for the Local Planner configuration<br/>
+    - **max_vel**: <br/>
+      Upper limit on robot velocity (m/s)
+    - **controller_frequency**: <br/>
+       Frequency at which the local planner sends velocity commands to the robot (usually ~ 10-100 Hz)
+    - **goal_tolerance**: <br/>
+       Admissible distance from goal location, to consider the goal reached. (requiring 0 pose error can lead to final instability) <br/>
+       ...
+
+You see some important configuration parameters, this knowledge can be helpful to understand the others!
 
 ## Recovery Behaviors
 
