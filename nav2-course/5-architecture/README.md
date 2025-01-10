@@ -42,6 +42,34 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 
 ## Parameters
 
+I will focus on the most important configuration parameters, feel free to explore their functionality! <br/>
+If you have some basic confidence with ROS, you know that parameters allow you to reconfigure the behavior of your project, in some cases even at runtime.<br/>
+In an application like navigation, these can be very useful in defining safety limits to respect, control frequency, costmap characteristics, and so on. <br/> 
+They are defined as usual in a ``.yaml`` configuration file, for example in the ``turtlebot3_navigation2`` package you can look here:
+
+```bash
+# Terminal
+cd /opt/ros/humble/share/turtlebot3_navigation2/param
+ls
+```
+
+As you can see, there is one configuration file per each turtlebot model. <br/>
+
+
+A simple-to-use tool for parameter analysis and update can be found by launching ``rqt``, we will use it: 
+
+> [!IMPORTANT]
+> To visualize the parameters related to Nav2 with rqt, launch Robot simulation and Navigation. 
+
+```bash
+# Terminal
+rqt
+```
+
+Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigure
+
+
+
 ## Recovery Behaviors
 
 ## TFs and Important Frames
