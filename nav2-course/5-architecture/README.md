@@ -72,26 +72,42 @@ Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigu
 
 - **/global_costmap/global_costmap**: <br/>
    Under this, you find the live parameters for the global cost map configuration
-    - **publish_frequency**: <br/>
-       Global Costmap update frequency (Hz)
-    - **infation_layer.inflation_radius**: <br/>
-       Radius (m) around obstacles at which we still consider the space not free.<br/>
+  
+    - **publish_frequency**: (Hz)<br/>
+       Global Costmap update frequency 
+      
+    - **infation_layer.inflation_radius**: (m)<br/>
+       Radius around obstacles at which we still consider the space not free.<br/>
        This ensures safe navigation, avoiding maneuvering too close to obstacles. <br/>
-       A trade-off is needed, if too big even free space is hard to traverse, and if too small collision can occur. 
-    - **robot_radius**: 
-    - **resolution**:<br/>
+       A trade-off is needed, if too big even free space is hard to traverse, and if too small collision can occur.
+      
+    - **robot_radius**: (m) <br/> 
+       Ostacle space (blue pixels), around mapped obstacles.<br/>
+       It corresponds to the dimension of the robot as a circle of this radius. 
+
+    - **resolution**: (m) <br/>
+      Resolution of each pixel in the map
      ...
       
 -  **/local_costmap/local_costmap**: <br/>
-    Under this, you find the live parameters for the local cost map configuration (almost the same as in global_costmap)<br/>
-    - **inflation_radius**:<br/>
+    Under this, you find the live parameters for the local cost map configuration (almost the same as in global_costmap)
+    
+    - **inflation_radius**: (m)<br/>
+      Influence how the local planner path is computed. Define a safe "occupied" space around obstacles. <br/>
+      As the global_costmap/inflation_layer.inflation_radius, this requires a trade-off for the tuning. <br/>
+      If small: easy path computation, but high probability of collisions <br/>
+      If big: less collision probability, but more complex path computation. 
     ...
       
-- **/controller_server**: Under this, you find the live parameters for the Local Planner configuration<br/>
+- **/controller_server**: <br/>
+   Under this, you find the live parameters for the Local Planner configuration
+  
     - **max_vel**: <br/>
       Upper limit on robot velocity (m/s)
+      
     - **controller_frequency**: <br/>
        Frequency at which the local planner sends velocity commands to the robot (usually ~ 10-100 Hz)
+      
     - **goal_tolerance**: <br/>
        Admissible distance from goal location, to consider the goal reached. (requiring 0 pose error can lead to final instability) <br/>
        ...
