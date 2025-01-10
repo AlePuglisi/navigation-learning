@@ -22,7 +22,21 @@ In particular, I will give answers to the following questions: <br/>
 - What are the important Frames for Nav2? <br/>
 
 Once you understand these basic components, you are ready for the final question: 
-- What is the overall Architecture of Nav2 Stack? 
+- What is the overall Architecture of Nav2 Stack?
+
+To experiment with the concept seen here, you need to follow the steps of [lesson 4, navigate](https://github.com/AlePuglisi/navigation-learning/tree/main/nav2-course/4-navigate).<br/>
+You need a map, a simulation running on that map, and the Nav2 navigation tool. <br/>
+For example: 
+
+```bash
+# Terminal 1
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+
+```bash
+# Terminal 2
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<relative_path/map_name.yaml>
+```
 
 ## Global/Local Planner and Costmaps
 
