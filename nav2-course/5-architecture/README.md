@@ -102,10 +102,10 @@ Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigu
 - **/controller_server**: <br/>
    Under this, you find the live parameters for the Local Planner configuration
   
-    - **max_vel**: <br/>
+    - **max_vel**: (m/s) <br/>
       Upper limit on robot velocity (m/s)
       
-    - **controller_frequency**: <br/>
+    - **controller_frequency**: (Hz) <br/>
        Frequency at which the local planner sends velocity commands to the robot (usually ~ 10-100 Hz)
       
     - **goal_tolerance**: <br/>
