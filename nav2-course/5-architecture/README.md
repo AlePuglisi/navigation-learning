@@ -173,17 +173,27 @@ After a worth it 5 seconds, this will produce a PDF file with the graphical repr
 Try to run it after launching the turtlebot3 simulation and navigation stack! <br/>
 The image below is a zoom-in with a focus on the important TFs for the Nav2 stack. 
 
-<image align=left width=300 heigth=420 src=https://github.com/user-attachments/assets/ea228f66-39a0-410f-8ebb-11cec710faff> <br/>
+<image align=left width=320 heigth=450 src=https://github.com/user-attachments/assets/ea228f66-39a0-410f-8ebb-11cec710faff> 
 Whenever you have a Robot running with Nav2 stack, you need: 
-- **map -> odom**:
-  
-- **odom -> base_link**:
-  
-(The important is to have a "path" from odom to base_link, the in-between frame **base_footprint** doesn't affect the possibility of retrieving that) 
- 
-- **base_link -> base_scan**:
 
-This TF tell you where is the LIDAR with respect to the Robot base, and it is fundamental to understand where are the obstacles perceived. 
+- **map -> odom**:<br/>
+This TF is used to compute robot location based on how it perceives the environment (according to exteroceptive sensors like LIDAR), from a likelihood estimation to the map (SLAM approach). <br/>
+It is accurate over a long time, when the likelihood converges, but in the short term it is unstable. 
+
+- **odom -> base_link**:<br/>
+(The important is to have a "path" from odom to base_link, the in-between frame **base_footprint** doesn't affect the possibility of retrieving that) 
+This TF comes from an "odometric" estimation of the robot pose, based on internal measurements (proprioceptive sensors, like wheel encoders). <br/>
+It usually comes from a kinematic model of the system, and it is reliable in the short term, but it may drift over time (error accumulation).
+ 
+- **base_link -> base_scan**:<br/>
+This TF tell you where is the LIDAR with respect to the Robot base, and it is fundamental to understand where are the obstacles perceived.
+
+(In principle, you should have map->base_link (SLAM) , odom->base_link (odometry), but we use the TF structure above as a workaround to respect TF rules in ROS. Do you remember? Never more than one parent) 
+
+If this is clear, you may have guessed that Nav2 takes the best from the odometric (map->odom) and SLAM (odom->base_link) pose estimate. <br/>
+Odometry ensures smooth location in short motion ranges, while map-based localization (SLAM) allows precise localization over time. <br/>
+It is clear that a tool that performs autonomous navigation, requires a continuous knowledge of the Robot pose in the environment. 
+
 
 
 ## Nav2 Architecture
