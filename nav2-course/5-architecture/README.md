@@ -40,6 +40,10 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:
 
 ## Global/Local Planner and Costmaps
 
+<image width=400 heigth=400 src=https://github.com/user-attachments/assets/3d8193cb-e6b3-474e-a1cc-6ad017bd507b>
+<image width=545 heigth=400 src=https://github.com/user-attachments/assets/85a2b197-f810-4c82-818b-5bb23be7450d>
+
+
 ## Parameters
 
 I will focus on the most important configuration parameters, feel free to explore their functionality! <br/>
@@ -56,10 +60,13 @@ As you can see, there is one configuration file per each turtlebot model. <br/>
 
 #### Visualize Parameters with a GUI
 
+<image width=600 heigth=300 src=https://github.com/user-attachments/assets/452d2bd7-7027-479a-8cdf-32d0869ccc6e>
+
 A simple-to-use tool for parameter analysis and update can be found by launching ``rqt``, we will use it: 
 
 > [!IMPORTANT]
-> To visualize the parameters related to Nav2 with rqt, launch Robot simulation and Navigation. 
+> To visualize the parameters related to Nav2 with rqt, launch Robot simulation and Navigation.<br/>
+> Remember also to Initialize the pose in Rviz to visualize the costmaps. 
 
 ```bash
 # Terminal
@@ -68,7 +75,8 @@ rqt
 
 Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigure
 
-#### Some parameters description: 
+#### Some Parameters Description: 
+Here is a simple explanation of the role of some configuration parameters, look below for some comprehensive examples...<br/>
 
 - **/global_costmap/global_costmap**: <br/>
    Under this, you find the live parameters for the global cost map configuration
@@ -92,7 +100,7 @@ Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigu
 -  **/local_costmap/local_costmap**: <br/>
     Under this, you find the live parameters for the local cost map configuration (almost the same as in global_costmap)
     
-    - **inflation_radius**: (m)<br/>
+    - **infation_layer.inflation_radius**: (m)<br/>
       Influence how the local planner path is computed. Define a safe "occupied" space around obstacles. <br/>
       As the global_costmap/inflation_layer.inflation_radius, this requires a trade-off for the tuning. <br/>
       If small: easy path computation, but high probability of collisions <br/>
@@ -112,7 +120,30 @@ Once ``rqt`` window opens, go to:  > Plugins > Configuration > Dynamic Reconfigu
        Admissible distance from goal location, to consider the goal reached. (requiring 0 pose error can lead to final instability) <br/>
        ...
 
-You see some important configuration parameters, this knowledge can be helpful to understand the others!
+#### Examples: 
+For those parameters that may be hard to understand, let's visualize the effect of these: <br/>
+(look at the pictures and remember the description above, the effect will be clearer. <br/>
+
+- **/global_costmap/global_costmap/infation_layer.inflation_radius**
+
+``inflation_radius=0.25``     |     ``inflation_radius=0.55``     |     ``inflation_radius=0.8``
+
+<image width=325 heigth=250 src=https://github.com/user-attachments/assets/a73133da-8b2b-416e-bda0-401ca1626b4c>
+
+<image width=325 heigth=250 src=https://github.com/user-attachments/assets/c67768af-c3dc-4bf5-a105-d1bf8d4406c1>
+   
+<image width=325 heigth=250 src=https://github.com/user-attachments/assets/07c02227-e578-4f21-8a78-74d646d4ceff>
+   
+- **/global_costmap/global_costmap/robot_radius**
+
+``robot_radius=0.1``     |     ``robot_radius=0.22``
+
+<image width=250 heigth=250 src=https://github.com/user-attachments/assets/7c15ed52-37c9-4560-a257-3c1caf806d84>
+
+<image width=250 heigth=250 src=https://github.com/user-attachments/assets/9a2f1574-c1c9-4d1a-8740-8183972b70c2>
+
+If you want to experiment with it, change the parameters numerical values on the rqt `` Dynamic Reconfigure``  Plugin, and look at the magic! <br/>
+This knowledge can help you understand the other parameters!
 
 ## Recovery Behaviors
 
