@@ -38,6 +38,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<relative_path/map_name.yaml>
 ```
 
+Then, remember to Initialize the **2D Pose Estimate** in Rviz to visualize the costmaps!
+
 ## Global/Local Planner and Costmaps
 
 <image width=400 heigth=400 src=https://github.com/user-attachments/assets/3d8193cb-e6b3-474e-a1cc-6ad017bd507b>
@@ -149,9 +151,45 @@ This knowledge can help you understand the other parameters!
 
 ## TFs and Important Frames
 
+If you are not familiar with TFs (TransForms) in ROS, take a look at the official [concept documentation](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Tf2.html). <br/>
+They are important concepts in any robotics application, not only for Navigation! <br/>
+
+In brief, Tfs represent the relative pose (position and orientation) between reference frames (attached to the robot parts or the environment). <br/>
+This relative pose evolution is tracked based on homogeneous transformations, and the tf2 package takes care of this! <br/>
+This information is published on `the `/tf`` topic, and several tools exist to work with this information. <br/>
+
+The overall system (Robot + Environment) TFs relationship can be represented using a tree.<br/>
+(In fact, as a rule, established for TFs in ROS, each frame can have only one parent, but one frame can have more children) <br/>
+
+A very useful tool to visualize the TF tree  is the ``view_frames`` node in **``tf2_tools``** package: 
+
+```bash
+# Terminal 
+ros2 run tf2_tools 
+```
+
+After a worth it 5 seconds, this will produce a PDF file with the graphical representation of the TF tree.
+
+Try to run it after launching the turtlebot3 simulation and navigation stack! <br/>
+The image below is a zoom-in with a focus on the important TFs for the Nav2 stack. 
+
+<image align=left width=300 heigth=420 src=https://github.com/user-attachments/assets/ea228f66-39a0-410f-8ebb-11cec710faff> <br/>
+Whenever you have a Robot running with Nav2 stack, you need: 
+- **map -> odom**:
+  
+- **odom -> base_link**:
+  
+(The important is to have a "path" from odom to base_link, the in-between frame **base_footprint** doesn't affect the possibility of retrieving that) 
+ 
+- **base_link -> base_scan**:
+
+This TF tell you where is the LIDAR with respect to the Robot base, and it is fundamental to understand where are the obstacles perceived. 
+
+
 ## Nav2 Architecture
+
 
 ## Conclusion 
 Finally, you know what happens when the robot moves towards the Goal. <br/>
-This knowledge is foundamental for the next lessons, in which you will explore how to customize the world in which a custom robot navigate. <br/>
+This knowledge is fundamental for the next lessons, in which you will explore how to customize the world in which a custom robot navigates. <br/>
 For further details on all the basic concepts behind Nav2, you can look at the official [Documentation](https://docs.nav2.org/concepts/index.html).
